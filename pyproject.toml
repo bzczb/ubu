@@ -1,116 +1,116 @@
+[build-system]
+build-backend = "hatchling.build"
+
+requires = [ "hatchling" ]
+
 [project]
 name = "ubu"
 version = "0.0.1"
 description = "Ubu application framework."
-authors = [{ name = "bzczb", email = "uqzx@protonmail.com" }]
 readme = "README.md"
-keywords = ['python']
+keywords = [ "python" ]
+authors = [ { name = "bzczb", email = "uqzx@protonmail.com" } ]
 requires-python = ">=3.12,<4.0"
 classifiers = [
-    "Intended Audience :: Developers",
-    "Programming Language :: Python",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3.13",
-    "Topic :: Software Development :: Libraries :: Python Modules",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = [
-    "injector",
+  "injector",
 ]
 
-[project.urls]
-Homepage = "https://bzczb.github.io/ubu/"
-Repository = "https://github.com/bzczb/ubu"
-Documentation = "https://bzczb.github.io/ubu/"
+urls.Documentation = "https://bzczb.github.io/ubu/"
+urls.Homepage = "https://bzczb.github.io/ubu/"
+urls.Repository = "https://github.com/bzczb/ubu"
 
 [dependency-groups]
 dev = [
-    "pytest>=7.2.0",
-    "pre-commit>=2.20.0",
-    "tox-uv>=1.11.3",
-    "deptry>=0.23.0",
-    "ty>=0.0.1a16",
-    "pytest-cov>=4.0.0",
-    "ruff>=0.11.5",
-    "mkdocs>=1.4.2",
-    "mkdocs-material>=8.5.10",
-    "mkdocstrings[python]>=0.26.1",
-    "autoflake>=2.3.1",
-    "pip-tools>=7.5.0",
-    "pip-review>=1.3.0",
+  "autoflake>=2.3.1",
+  "deptry>=0.23",
+  "mkdocs>=1.4.2",
+  "mkdocs-material>=8.5.10",
+  "mkdocstrings[python]>=0.26.1",
+  "pip-review>=1.3",
+  "pip-tools>=7.5",
+  "pre-commit>=2.20",
+  "pyproject-fmt>=2.6",
+  "pytest>=7.2",
+  "pytest-cov>=4",
+  "ruff>=0.11.5",
+  "tox-uv>=1.11.3",
+  "ty>=0.0.1a16",
 ]
 
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
 [tool.hatch.build.targets.wheel]
-packages = ["ubu"]
-
-[tool.ty.environment]
-python = "./.venv"
-python-version = "3.12"
-
-[tool.pytest.ini_options]
-testpaths = ["tests"]
+packages = [ "ubu" ]
 
 [tool.ruff]
 target-version = "py312"
 line-length = 120
 fix = true
 
-[tool.ruff.lint]
-select = [
-    # flake8-2020
-    "YTT",
-    # flake8-bandit
-    "S",
-    # flake8-bugbear
-    "B",
-    # flake8-builtins
-    "A",
-    # flake8-comprehensions
-    "C4",
-    # flake8-debugger
-    "T10",
-    # flake8-simplify
-    "SIM",
-    # isort
-    "I",
-    # mccabe
-    "C90",
-    # pycodestyle
-    "E", "W",
-    # pyflakes
-    "F",
-    # pygrep-hooks
-    "PGH",
-    # pyupgrade
-    "UP",
-    # ruff
-    "RUF",
-    # tryceratops
-    "TRY",
+format.preview = true
+lint.select = [
+  # flake8-builtins
+  "A",
+  # flake8-bugbear
+  "B",
+  # flake8-comprehensions
+  "C4",
+  # mccabe
+  "C90",
+  # pycodestyle
+  "E",
+  # pyflakes
+  "F",
+  # isort
+  "I",
+  # pygrep-hooks
+  "PGH",
+  # ruff
+  "RUF",
+  # flake8-bandit
+  "S",
+  # flake8-simplify
+  "SIM",
+  # flake8-debugger
+  "T10",
+  # tryceratops
+  "TRY",
+  # pyupgrade
+  "UP",
+  "W",
+  # flake8-2020
+  "YTT",
 ]
-ignore = [
-    # LineTooLong
-    "E501",
-    # DoNotAssignLambda
-    "E731",
+lint.ignore = [
+  # LineTooLong
+  "E501",
+  # DoNotAssignLambda
+  "E731",
 ]
+lint.per-file-ignores."tests/*" = [ "S101" ]
 
-[tool.ruff.lint.per-file-ignores]
-"tests/*" = ["S101"]
+[tool.deptry]
+ignore = [ "DEP002" ] # Ignore unused dependencies during early development.
 
-[tool.ruff.format]
-preview = true
+[tool.pytest.ini_options]
+testpaths = [ "tests" ]
 
 [tool.coverage.report]
 skip_empty = true
 
 [tool.coverage.run]
 branch = true
-source = ["ubu"]
+source = [ "ubu" ]
+
+[tool.ty.environment]
+python = "./.venv"
+python-version = "3.12"
 
 [tool.uv.sources]
 injector = { url = "https://github.com/bzczb/injector/archive/3f371fe5d291d4694fa5e5719a6fd5f9682b8d0a.tar.gz" }
