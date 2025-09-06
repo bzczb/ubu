@@ -5,6 +5,17 @@
 		}
 	],
 	"settings": {
-    	"makefile.configureOnOpen": false
+		"conventionalCommits.autoCommit": true,
+		"git.autofetch": true,
+		"git.enableSmartCommit": true,
+		"git.postCommitCommand": "sync",
+		"git.smartCommitChanges": "all",
+	},
+	"extensions": {
+		"recommendations": [
+			"vivaxy.vscode-conventional-commits",
+			"astral-sh.ty",
+			"detachhead.basedpyright"
+		]
 	}
 }
