@@ -14,6 +14,9 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
+dependencies = [
+    "injector",
+]
 
 [project.urls]
 Homepage = "https://bzczb.github.io/ubu/"
@@ -108,3 +111,6 @@ skip_empty = true
 [tool.coverage.run]
 branch = true
 source = ["ubu"]
+
+[tool.uv.sources]
+injector = { url = "https://github.com/bzczb/injector/archive/3f371fe5d291d4694fa5e5719a6fd5f9682b8d0a.tar.gz" }

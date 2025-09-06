@@ -10,6 +10,9 @@
 		"git.enableSmartCommit": true,
 		"git.postCommitCommand": "sync",
 		"git.smartCommitChanges": "all",
+		"conventionalCommits.scopes": [
+			"deps"
+		],
 	},
 	"extensions": {
 		"recommendations": [
