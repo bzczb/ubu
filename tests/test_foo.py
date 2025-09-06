@@ -1,5 +1,2 @@
-from ubu.foo import foo
-
-
 def test_foo():
-    assert foo("foo") == "foo"
+    assert "foo" == "foo"

@@ -1,24 +1,54 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {
-		"conventionalCommits.autoCommit": true,
-		"git.autofetch": true,
-		"git.enableSmartCommit": true,
-		"git.postCommitCommand": "sync",
-		"git.smartCommitChanges": "all",
-		"conventionalCommits.scopes": [
-			"deps"
-		],
-	},
 	"extensions": {
 		"recommendations": [
 			"vivaxy.vscode-conventional-commits",
 			"astral-sh.ty",
 			"detachhead.basedpyright"
 		]
+	},
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"[python]": {
+			"editor.codeActionsOnSave": {
+				"source.organizeImports": "explicit"
+			}
+		},
+		"conventionalCommits.autoCommit": true,
+		"conventionalCommits.scopes": [
+			"deps"
+		],
+		"editor.formatOnSave": true,
+		"explorer.excludeGitIgnore": true,
+		"files.exclude": {
+			"**/.cache": true,
+			"**/.DS_Store": true,
+			"**/.git": true,
+			"**/.hg": true,
+			"**/.mypy_cache": true,
+			"**/.svn": true,
+			"**/*.mo": true,
+			"**/*.po": true,
+			"**/CVS": true,
+			"**/ext": true,
+			"**/py_venv": true,
+			"**/Thumbs.db": true,
+			"**/venv": true
+		},
+		"git.autofetch": true,
+		"git.enableSmartCommit": true,
+		"git.postCommitCommand": "sync",
+		"git.smartCommitChanges": "all",
+		"python.testing.pytestArgs": [
+			"tests"
+		],
+		"python.testing.pytestEnabled": true,
+		"python.testing.unittestEnabled": false,
+		"ruff.configuration": "./pyproject.toml",
+		"ruff.lint.enable": true,
+		"ruff.organizeImports": true
 	}
 }
