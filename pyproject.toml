@@ -21,6 +21,7 @@ classifiers = [
 ]
 dependencies = [
   "injector",
+  "sqlalchemy>=2.0.43",
 ]
 
 urls.Documentation = "https://bzczb.github.io/ubu/"
@@ -29,6 +30,7 @@ urls.Repository = "https://github.com/bzczb/ubu"
 
 [dependency-groups]
 dev = [
+  "alembic>=1.16.5",
   "autoflake>=2.3.1",
   "deptry>=0.23",
   "mkdocs>=1.4.2",
