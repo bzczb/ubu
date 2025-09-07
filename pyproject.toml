@@ -57,10 +57,11 @@ packages = [ "ubu" ]
 
 [tool.ruff]
 target-version = "py312"
-line-length = 120
+line-length = 88
 fix = true
 
 format.preview = true
+format.quote-style = "single"
 lint.select = [
   # flake8-builtins
   "A",
@@ -99,6 +100,8 @@ lint.ignore = [
   "E501",
   # DoNotAssignLambda
   "E731",
+  # __all__ is not sorted
+  "RUF022",
 ]
 lint.per-file-ignores."tests/*" = [ "S101" ]
 

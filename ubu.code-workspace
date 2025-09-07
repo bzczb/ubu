@@ -17,10 +17,15 @@
 				"source.organizeImports": "explicit"
 			}
 		},
+		"basedpyright.analysis.diagnosticSeverityOverrides": {
+			"reportUnreachable": "none"
+		},
+		"basedpyright.analysis.typeCheckingMode": "standard",
 		"conventionalCommits.autoCommit": true,
 		"conventionalCommits.scopes": [
 			"deps"
 		],
+		"python.analysis.typeCheckingMode": "standard",
 		"editor.formatOnSave": true,
 		"explorer.excludeGitIgnore": true,
 		"files.exclude": {
@@ -49,6 +54,7 @@
 		"python.testing.unittestEnabled": false,
 		"ruff.configuration": "./pyproject.toml",
 		"ruff.lint.enable": true,
-		"ruff.organizeImports": true
+		"ruff.organizeImports": true,
+		"ty.disableLanguageServices": true
 	}
 }
