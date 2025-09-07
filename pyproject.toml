@@ -26,6 +26,7 @@ dependencies = [
   "injector",
   "nestedtext>=3.7",
   "platformdirs>=4.4",
+  "pyanalyze>=0.13.1",
   "sqlalchemy>=2.0.43",
 ]
 
