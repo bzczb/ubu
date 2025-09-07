@@ -1,7 +1,7 @@
 import attr
 
 
-@attr.define
+@attr.define(frozen=True)
 class AppInfo:
     name: str
     version: str
