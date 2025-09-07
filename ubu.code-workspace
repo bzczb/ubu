@@ -25,7 +25,6 @@
 		"conventionalCommits.scopes": [
 			"deps"
 		],
-		"python.analysis.typeCheckingMode": "standard",
 		"editor.formatOnSave": true,
 		"explorer.excludeGitIgnore": true,
 		"files.exclude": {
@@ -47,6 +46,8 @@
 		"git.enableSmartCommit": true,
 		"git.postCommitCommand": "sync",
 		"git.smartCommitChanges": "all",
+		"makefile.configureOnOpen": false,
+		"python.analysis.typeCheckingMode": "standard",
 		"python.testing.pytestArgs": [
 			"tests"
 		],
