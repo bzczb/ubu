@@ -47,7 +47,11 @@
 		"git.postCommitCommand": "sync",
 		"git.smartCommitChanges": "all",
 		"makefile.configureOnOpen": false,
-		"python.analysis.typeCheckingMode": "standard",
+		"python.analysis.diagnosticSeverityOverrides": {
+			"reportMissingImports": "none",
+			"reportUndefinedVariable": "none",
+			"reportUnreachable": "none"
+		},
 		"python.testing.pytestArgs": [
 			"tests"
 		],
