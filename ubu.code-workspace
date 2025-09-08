@@ -17,6 +17,9 @@
 				"source.organizeImports": "explicit"
 			}
 		},
+		"[toml]": {
+			"editor.formatOnSave": false
+		},
 		"basedpyright.analysis.diagnosticSeverityOverrides": {
 			"reportUnreachable": "none"
 		},

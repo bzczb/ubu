@@ -1,3 +1,7 @@
+"""
+App-wide event queue and event definitions.
+"""
+
 import logging
 from enum import IntEnum, auto, unique
 

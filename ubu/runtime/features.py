@@ -1,3 +1,8 @@
+"""
+Simple feature availability tracking.
+Useful when some packages are optional dependencies.
+"""
+
 import typing as T
 
 import attr

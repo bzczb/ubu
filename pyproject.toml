@@ -104,6 +104,8 @@ lint.ignore = [
   "E731",
   # __all__ is not sorted
   "RUF022",
+  # raise-vanilla-args... pretty awful
+  "TRY003",
 ]
 lint.per-file-ignores."tests/*" = [ "S101" ]
 
