@@ -86,3 +86,12 @@ def config_to_file(config: T.Any, filepath: str | Path):
     yaml = config_to_nt(config)
     with open(os.path.abspath(filepath), 'w', encoding='utf-8') as file:
         file.write(yaml)
+
+
+def nt_loads(s: str) -> T.Any:
+    od = nt.loads(s)
+    return od
+
+
+def nt_dumps(d: T.Any) -> str:
+    return nt.dumps(d, indent=2)

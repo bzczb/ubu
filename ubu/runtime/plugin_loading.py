@@ -14,28 +14,31 @@ from ubu.injector._api import Injector, app_scope, inject
 from ubu.runtime.event import Event, EventQueue
 from ubu.runtime.plugin_base import PluginBase
 
+if T.TYPE_CHECKING:
+    from ubu.runtime.pack import Pack
+
 log = logging.getLogger(__name__)
-type Pack = T.Any  # TODO
 
 
 class LoadingProcess:
     def __init__(self, pack: Pack) -> None:
-        self.pack_name: str = pack.name
-        self.pack_uuid: UUID = pack.uuid
-        if not pack.is_plugin:
+        md = pack.md
+        self.pack_name: str = md.name
+        self.pack_uuid: UUID = md.uuid
+        if not md.is_plugin:
             raise ValueError(f'Pack "{self.pack_name}" is not a plugin pack.')
 
-        base_path: Path | None = pack.base_path
+        base_path: Path | None = pack.path
         if base_path is None:
             raise ValueError(f'Pack "{self.pack_name}" has no base_path set.')
         self.base_path = base_path
 
-        if pack.plugin is None:
+        if md.plugin is None:
             raise ValueError(
                 f'Pack "{self.pack_name}" has no plugin configuration set.'
             )
 
-        mod_name: str | None = pack.plugin.module_name
+        mod_name: str | None = md.plugin.module_name
         if mod_name is None:
             raise ValueError(f'Pack "{self.pack_name}" has no plugin module_name set.')
         self.mod_name = mod_name
@@ -122,7 +125,7 @@ class PluginLoader:
         plugin_class.__PACK__ = pack
 
         log.debug(f'{log_prefix}startup')
-        pack.__plugin__ = self._injector.create_object(plugin_class)
+        pack.plugin = self._injector.create_object(plugin_class)
 
         self._eq.dispatch(Event.PLUGIN_LOADED_ONE, pack)
 
