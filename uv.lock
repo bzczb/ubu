@@ -812,7 +812,7 @@ wheels = [
 [[package]]
 name = "pyanalyze"
 version = "0.13.1"
-source = { registry = "https://pypi.org/simple" }
+source = { url = "https://github.com/bzczb/pyanalyze/archive/cecf6d82013710aa9c094b7b74f2cbcd773dc628.tar.gz" }
 dependencies = [
     { name = "ast-decompiler" },
     { name = "asynq" },
@@ -822,10 +822,24 @@ dependencies = [
     { name = "typeshed-client" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/ac/67/30f07c61d86a2a29fe44556fa8b41040e8d77232c41674b6af2d9ace567f/pyanalyze-0.13.1.tar.gz", hash = "sha256:a5a17b348a1d929e35fd5c37bacb2899d625c8e2cdc9aaad0981213570277b65", size = 335918, upload-time = "2024-08-07T14:11:18.438Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/4a/57/a08077ff3d3ec4e01185b85351aeedb801b781c8f1331175590c7320316d/pyanalyze-0.13.1-py3-none-any.whl", hash = "sha256:8d2670cf361a0ac3e381da2c8b0efcb708181783f371d7d7c9bbcac461e64042", size = 375069, upload-time = "2024-08-07T14:11:16.833Z" },
+sdist = { hash = "sha256:5650a1d7bfd8cb8de8cd0e0a0931fc526d41bd608002a5f3aae9c21008ca0099" }
+
+[package.metadata]
+requires-dist = [
+    { name = "annotated-types", marker = "extra == 'tests'" },
+    { name = "ast-decompiler", specifier = ">=0.4.0" },
+    { name = "asynq" },
+    { name = "attrs", marker = "extra == 'tests'" },
+    { name = "codemod" },
+    { name = "mypy-extensions", marker = "extra == 'tests'" },
+    { name = "pydantic", marker = "extra == 'tests'", specifier = ">=2.11.5" },
+    { name = "pytest", marker = "extra == 'tests'" },
+    { name = "qcore", specifier = ">=0.5.1" },
+    { name = "tomli", specifier = ">=1.1.0" },
+    { name = "typeshed-client", specifier = ">=2.1.0" },
+    { name = "typing-extensions", specifier = ">=4.12.2" },
 ]
+provides-extras = ["tests"]
 
 [[package]]
 name = "pyflakes"
@@ -1274,7 +1288,7 @@ requires-dist = [
     { name = "injector", url = "https://github.com/bzczb/injector/archive/3f371fe5d291d4694fa5e5719a6fd5f9682b8d0a.tar.gz" },
     { name = "nestedtext", specifier = ">=3.7" },
     { name = "platformdirs", specifier = ">=4.4" },
-    { name = "pyanalyze", specifier = ">=0.13.1" },
+    { name = "pyanalyze", url = "https://github.com/bzczb/pyanalyze/archive/cecf6d82013710aa9c094b7b74f2cbcd773dc628.tar.gz" },
     { name = "sqlalchemy", specifier = ">=2.0.43" },
 ]
 

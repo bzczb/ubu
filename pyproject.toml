@@ -26,7 +26,7 @@ dependencies = [
   "injector",
   "nestedtext>=3.7",
   "platformdirs>=4.4",
-  "pyanalyze>=0.13.1",
+  "pyanalyze",
   "sqlalchemy>=2.0.43",
 ]
 
@@ -125,3 +125,4 @@ python-version = "3.12"
 
 [tool.uv.sources]
 injector = { url = "https://github.com/bzczb/injector/archive/3f371fe5d291d4694fa5e5719a6fd5f9682b8d0a.tar.gz" }
+pyanalyze = { url = "https://github.com/bzczb/pyanalyze/archive/cecf6d82013710aa9c094b7b74f2cbcd773dc628.tar.gz" }
