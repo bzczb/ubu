@@ -17,7 +17,7 @@ log = logging.getLogger(__name__)
 @attr.s(init=False)
 class RuntimePaths:
     @inject
-    def __init__(self, app_info: AppInfo):
+    def __init__(self, app_info: AppInfo, *, program_path: Path, ubu_path: Path):
         self.__attrs_init__()
         self.platform_dirs = PlatformDirs(
             appname=app_info.name,
@@ -25,6 +25,8 @@ class RuntimePaths:
             roaming=True,
             ensure_exists=True,
         )
+        self.program_path = program_path
+        self.ubu_path = ubu_path
         platform_dirs = self.platform_dirs
         self.temp_path = platform_dirs.user_runtime_path
 
