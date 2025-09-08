@@ -23,6 +23,7 @@ dependencies = [
   "attrs>=25.3",
   "bidict>=0.23.1",
   "cattrs>=25.2",
+  "eventpy>=0.0.1",
   "injector",
   "nestedtext>=3.7",
   "platformdirs>=4.4",
